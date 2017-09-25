@@ -2,5 +2,4 @@
 ;;;; next.asd
 (defsystem :next
   :serial t
-  :components ((:file "lisp/package")
-	       (:file "lisp/base")))
+  :components ((:file "lisp/base")))
