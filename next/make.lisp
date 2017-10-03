@@ -38,8 +38,7 @@
 (ext:run-program "qmake" nil :output t)
 
 ;; execute make
-(ext:run-program "make" nil :output t)
-
+(ext:run-program "make" '("install") :output t)
 
 ;;;; Cleanup Operations ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; delete tmp dir to force recompilation
