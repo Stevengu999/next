@@ -83,13 +83,15 @@ two minor releases following major release 1.0.
 **** TODO History is searchable
 - History has a query language that can be used to look for different
   things (e.g. date, include exclude regex, etc)
-** 0.04
+** DONE 0.04
+CLOSED: [2017-11-17 Fri 15:37]
 *** DONE Isolate backend QT Code
 CLOSED: [2017-10-23 Mon 01:23]
 - Break apart QT code into separate file
 - Remove all top-level side effects
 - Modularize GUI backend
-**** TODO Write Cocoa backend
+**** DONE Write Cocoa backend
+CLOSED: [2017-11-17 Fri 15:37]
 - Use CCL Cocoa Library to use native webkit backend
 *** DONE Bookmarks
 CLOSED: [2017-10-10 Tue 01:06]
