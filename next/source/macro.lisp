@@ -43,8 +43,8 @@
     (lambda (,symbol) ,@body)
     ,@(rest async-form)))
 
-(defmacro with-results (bindings &body body)
+(defmacro with-result* (bindings &body body)
   (if (null bindings)
     `(progn ,@body)
     `(with-result ,(first bindings)
-       (with-results ,(rest bindings) ,@body))))
+       (with-result* ,(rest bindings) ,@body))))
