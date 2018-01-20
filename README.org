@@ -53,10 +53,10 @@ open up new links, or switch tabs with the power of fuzzy completion.
 #+html: <img src="assets/gifs/fast_navigation.gif" align="center"/>
 
 * Getting Started
-** Install Next Browser
+** Install Next
 See the [[https://github.com/nEXT-Browser/nEXT/releases][releases]] section for pre-built binaries. To perform an
 installation from source, please see the [[https://github.com/nEXT-Browser/nEXT/tree/master/next][developer readme]].
-** Quickstart Keys Next
+** Quickstart Keys
 
 - ~C-l~:     Load URL in tab
 - ~S-l~:     Load URL in a new tab
