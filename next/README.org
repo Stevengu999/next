@@ -1,4 +1,4 @@
-* nEXT Browser Developer Readme                                         :TOC:
+* Next Browser Developer Readme                                         :TOC:
 - [[#developer-installation][Developer Installation]]
   - [[#macos-setup][MacOS Setup]]
   - [[#linux-setup-experimental][Linux Setup (Experimental)]]
@@ -18,7 +18,7 @@
   - [[#001][0.01]]
 
 * Developer Installation
-nEXT browser is built with CCL and SBCL. It is designed to be cross
+Next browser is built with CCL and SBCL. It is designed to be cross
 platform compatible. Support for graphics is provided via Cocoa for
 MacOS and GTK for Linux. To download a prebuilt-binary, please see the
 "Releases" section of this repository.
@@ -59,8 +59,8 @@ it directly from the SBCL repository.
   instructions can be found here: [[http://www.sbcl.org/getting.html]]
 
 #+begin_quote
-nEXT is also compatible with CCL, but due to upstream issues in a
-dependency, the stability of nEXT is best with SBCL.
+Next is also compatible with CCL, but due to upstream issues in a
+dependency, the stability of Next is best with SBCL.
 #+end_quote
 
 *** Installing Quicklisp
@@ -99,7 +99,7 @@ these fixes.
 The cl-webkit bindings provide an interface to the Webkit2GTK+
 framework for manipulating and rendering web content.
 
-- Clone: https://github.com/nEXT-Browser/cl-webkit to a path within
+- Clone: https://github.com/Next-Browser/cl-webkit to a path within
   your local-projects. (=~/common-lisp/quicklisp/local-projects/cl-webkit=)
 
 ** Run from Source
@@ -108,19 +108,19 @@ In a new Terminal execute the following:
 1. ~lisp~ to create a new Lisp Repl (replace ~lisp~ with ~sbcl~ or
    ~ccl~)
 2. Execute ~(require :asdf)~ if asdf is not already loaded
-3. Execute ~(asdf:load-asd "/full/path/to/next.asd")~ to load the nEXT
+3. Execute ~(asdf:load-asd "/full/path/to/next.asd")~ to load the Next
    system definition (you can not use relative pathnames).
-4. Execute ~(ql:quickload :next)~ to load the nEXT system into your
+4. Execute ~(ql:quickload :next)~ to load the Next system into your
    Lisp image. To load the MacOS version quickload ~:next/cocoa~. To
    load the GTK version quickload ~:next/gtk~.
-5. Execute ~(next:start)~ to open your first nEXT window.
+5. Execute ~(next:start)~ to open your first Next window.
 
 ** Compile
 *** MacOS Compilation
 From the CCL Source directory, execute
 
 1. ~ccl --no-init --load make.lisp~
-2. The compiled binary will be present in build/nEXT
+2. The compiled binary will be present in build/Next
 
 * Help & Community
 There are several ways to ask for help from the community. The first
@@ -140,7 +140,7 @@ After you have found a TODO item that is available:
 - make a pull request
 
 ** IRC Channel
-You can find nEXT Browser on Freenode IRC at #next-browser
+You can find Next Browser on Freenode IRC at #next-browser
 * Release Timeline
 Major releases are issued by incrementing the first digit. That is,
 release 1.20, and 2.20 are one major release away from each other. Minor
@@ -166,7 +166,7 @@ two minor releases following major release 1.0.
 - Develop first content analysis functions to be used for keyword
   generation
 - Use the keyword generation to extend upon the current jump to
-  heading built into nEXT to allow jumping to a paragraph (many
+  heading built into Next to allow jumping to a paragraph (many
   websites do not use h1, h2 tags, especially ones with user created
   content)
 *** TODO Create with-new-buffer macro
@@ -182,7 +182,7 @@ two minor releases following major release 1.0.
   in the keybinding
 - Convert existing functions to use continuation passing style input
 *** TODO Configuration Object
-- Create configuration object that can be passed from the nEXT package
+- Create configuration object that can be passed from the Next package
   to the interface package.
 *** TODO Defcommand
 - Implement defcommand macro with overhaul for how keybindings are
@@ -205,7 +205,7 @@ CLOSED: [2017-12-17 Sun 01:13]
 *** DONE User Customization Example
 CLOSED: [2017-12-17 Sun 01:10]
 - Create an example in the Documents directory that details the
-  creation of a simple mode, and a way of customizing nEXT
+  creation of a simple mode, and a way of customizing Next
 *** DONE Jump to Heading
 CLOSED: [2017-12-16 Sat 00:49]
 - Implement something akin to ijump which allows you to jump to any
@@ -222,7 +222,7 @@ CLOSED: [2017-12-11 Mon 00:26]
   applied to it, so that no memory is lost when switching modes
 *** DONE Add Slime Support
 CLOSED: [2017-12-10 Sun 01:55]
-- Add slime support to the compiled version of nEXT
+- Add slime support to the compiled version of Next
 *** DONE Reload Init Function
 CLOSED: [2017-12-07 Thu 15:48]
 - Allow function to reload init
@@ -363,7 +363,7 @@ render a single document.
 
 Mode-map: A keyboard hot-key to function mapping.
 
-Minibuffer: A special buffer dedicated to interacting with nEXT
+Minibuffer: A special buffer dedicated to interacting with Next
 commands in progress. This buffer appears at the bottom of the screen
 and is collapsed when not in use.
 

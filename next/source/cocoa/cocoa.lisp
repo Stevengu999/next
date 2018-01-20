@@ -183,7 +183,7 @@
 					  #$NSMiniaturizableWindowMask
 					  #$NSResizableWindowMask)
 		      :backing #$NSBackingStoreBuffered
-		      :title "nEXT"
+		      :title "Next"
 		      :defer t))
 	     (.next-view. (make-instance 'next-view)))
 	(#/setContentView: .window. .next-view.)
