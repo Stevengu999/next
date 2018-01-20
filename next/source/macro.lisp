@@ -1,4 +1,4 @@
-;;;; macro.lisp --- macros used in Next
+;;;; macro.lisp --- macros used in nEXT
 
 (in-package :next)
 

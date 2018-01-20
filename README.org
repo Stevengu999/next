@@ -1,10 +1,11 @@
 #+html: <img src="assets/icon_256x256.png" align="right"/>
-* Next Browser
-Next is a keyboard-oriented, extensible web-browser inspired by Emacs
-and designed for power users. The application has familiar
-key-bindings, is fully configurable and extensible in Lisp, and has
-powerful features for productive professionals. Next Browser is the
-infinitely EXTensible browser.
+* nEXT Browser
+nEXT is the fastest productivity browser. nEXT is a keyboard-oriented,
+extensible web-browser inspired by Emacs and designed for power
+users. The application has familiar key-bindings, is fully
+configurable and extensible in Lisp, and has powerful features for
+productive professionals. nEXT Browser is the infinitely EXTensible
+browser.
 
 * Powerful Features
 ** Fast tab switching
@@ -33,14 +34,14 @@ In the example below, the User performs the following actions:
 
 It is at this point that a normal browser would NOT be able to
 navigate you forwards to your visit of ~Amphibian~. Instead of
-erasing your history, Next offers smart navigation and prompts the
+erasing your history, nEXT offers smart navigation and prompts the
 user. Do you wish to go forwards to ~Amphibian~ or to
 ~Reptile~?
 
 #+html: <img src="assets/gifs/tree_forward.gif" align="center"/>
 
 ** Lightning fast navigation
-Next is lightweight and fast. The interface does not get in your way,
+nEXT is lightweight and fast. The interface does not get in your way,
 and everything can be done by keyboard. You are free to fully focus on
 your task unburdened by cumbersome UI.
 
@@ -53,7 +54,7 @@ open up new links, or switch tabs with the power of fuzzy completion.
 #+html: <img src="assets/gifs/fast_navigation.gif" align="center"/>
 
 * Getting Started
-** Install Next
+** Install nEXT Browser
 See the [[https://github.com/nEXT-Browser/nEXT/releases][releases]] section for pre-built binaries. To perform an
 installation from source, please see the [[https://github.com/nEXT-Browser/nEXT/tree/master/next][developer readme]].
 ** Quickstart Keys
@@ -71,12 +72,12 @@ The following keys exist as special keys:
 2. ~S~: Super (Windows key, Command Key)
 3. ~M~: Meta (Alt key, Option Key)
 
-** Customize and EXTend Next
+** Customize and EXTend nEXT
 Customization is possible through the creation of a
 =~/.config/next/init.lisp= file. From here you
 can override and redefine any of the functions by defining your init
 file as part of the ~:next~ package. For more information please see:
-[[https://github.com/nEXT-Browser/nEXT/blob/master/documents/MANUAL.org#customization][customizing Next]].
+[[https://github.com/nEXT-Browser/nEXT/blob/master/documents/MANUAL.org#customization][customizing nEXT]].
 
 Additionally, a document provided in the documents directory named
 [[https://github.com/nEXT-Browser/nEXT/blob/master/documents/EXTENSION.org][EXTENSION.org]] is a place for the community to share helpful
@@ -84,5 +85,5 @@ customizations. To share your own extension, please make a pull
 request with your new extension appended to EXTENSION.org.
 
 ** Documentation
-For full documentation about Next, how it works, and how to extend it
+For full documentation about nEXT, how it works, and how to extend it
 please see the [[https://github.com/nEXT-Browser/nEXT/blob/master/documents/MANUAL.org][user manual]].

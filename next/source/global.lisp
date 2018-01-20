@@ -27,9 +27,9 @@
   "The default zoom ratio.")
 (defvar *swank-port* 4006
   "The port that swank will open a new server on (default Emacs slime port
-  is 4005, default set to 4006 in Next to avoid collisions).")
+  is 4005, default set to 4006 in nEXT to avoid collisions).")
 (defvar *start-page-url* "https://next-browser.github.io/start.html"
-  "The url of the first buffer opened by Next when started.")
+  "The url of the first buffer opened by nEXT when started.")
 (defvar *package-symbols* nil
   "The package symbols available, populated by helper function
   load-package-symbols.")
@@ -46,4 +46,4 @@
   "A global variable used to store current completions for a
   completion function that has a static list.")
 (defvar *cookie-path-dir* (xdg-data-home)
-  "The path for cookies in the GTK Version of Next")
+  "The path for cookies in the GTK Version of nEXT")

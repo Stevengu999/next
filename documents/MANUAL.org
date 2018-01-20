@@ -1,5 +1,5 @@
-#+TITLE: Next Browser User Manual
-Next Browser is the ultimate Next generation browsing experience
+#+TITLE: nEXT Browser User Manual
+Next Browser is the ultimate nEXT generation browsing experience
 designed for power users. 100% of the functions and classes are
 exposed to the end-user allowing for infinite customization.
 * Contents                                                              :TOC:
@@ -18,7 +18,7 @@ exposed to the end-user allowing for infinite customization.
   - [[#exiting][Exiting]]
 - [[#advanced-topics][Advanced Topics]]
   - [[#help][Help]]
-  - [[#slime-with-a-compiled-version-of-next][Slime with a compiled version of Next]]
+  - [[#slime-with-a-compiled-version-of-next][Slime with a compiled version of nEXT]]
 - [[#customization][Customization]]
   - [[#keybinding][Keybinding]]
   - [[#loading-files][Loading Files]]
@@ -62,7 +62,7 @@ The full key-bindings for link-hint based navigate are found below:
 3. ~S-g~: Create new tab with link, focus on new tab
 
 ** Visiting URLs
-When ambiguous URLs are inputted, Next will attempt the best guess
+When ambiguous URLs are inputted, nEXT will attempt the best guess
 about what the user wishes. If the user does not supply a protocol in
 a URL, ~https~ will be assumed. To visit a site supporting only
 ~http~, the user must explicitly type the full URL with ~http~
@@ -169,7 +169,7 @@ In the example below, the User performs the following actions:
 
 It is at this point that a normal browser would NOT be able to
 navigate you forwards to your visit of ~Ancient Greek~. Instead of
-erasing your history, Next offers smart navigation and prompts the
+erasing your history, nEXT offers smart navigation and prompts the
 user. Do you wish to go forwards to ~Ancient Greek~ or to
 ~Classical Athens~?
 
@@ -199,7 +199,7 @@ and manage your bookmarks, a few functions are provided:
 5. ~S-b g~: Bookmark Anchor (input URL via link hints)
 
 ** Exiting
-To exit Next enter the key-combination ~C-x C-c~ and the program will
+To exit nEXT enter the key-combination ~C-x C-c~ and the program will
 quit. All of your open tabs and form data will not be persisted. The
 only information saved will be your filled in passwords, cookies,
 and other information within your cache.
@@ -207,12 +207,12 @@ and other information within your cache.
 * Advanced Topics
 ** Help
 The help system allows you to look up variable and function docstrings
-directly within Next. Docstrings will appear in a new help buffer.
+directly within nEXT. Docstrings will appear in a new help buffer.
 
 1. ~S-h v~: Look up a variable docstring
 
-** Slime with a compiled version of Next
-Slime provides a way of interacting with Next, and with Lisp code in
+** Slime with a compiled version of nEXT
+Slime provides a way of interacting with nEXT, and with Lisp code in
 general (in a REPL like manner).
 
 From the Slime Manual:
@@ -225,18 +225,18 @@ with a running Common Lisp process for compilation, debugging,
 documentation lookup, and so on.
 #+end_quote
 
-To use Slime with a compiled version of Next use the keybinding ~S-h
+To use Slime with a compiled version of nEXT use the keybinding ~S-h
 s~ to launch a Swank server. Slime will connect to the Swank server
 and give you completion, debugging, documentation, etc. The default
-port for Swank on Next is ~4006~ to avoid collisions with the default
+port for Swank on nEXT is ~4006~ to avoid collisions with the default
 Swank port of ~4005~ within an Emacs ~*inferior-lisp*~ process.
 
-After launching the Swank server in Next- within Emacs execute:
+After launching the Swank server in nEXT- within Emacs execute:
 
 1. ~M-x~
 2. ~slime-connect~
 3. Enter ~127.0.0.1~ for the host
-4. Enter ~4006~ for the port (Next variable ~*swank-port*~)
+4. Enter ~4006~ for the port (nEXT variable ~*swank-port*~)
 
 To customize the port that Swank starts on, edit the global variable
 ~*swank-port*~ in your init file.
@@ -248,7 +248,7 @@ customizations. If the directory =~/.config/next/= does not already
 exist, you will have to make it.
 
 The first line of an init file should contain the following package
-declaration in order to modify Next specific variables and functions:
+declaration in order to modify nEXT specific variables and functions:
 
 #+NAME: package
 #+BEGIN_SRC lisp
@@ -271,7 +271,7 @@ off control key, ~o~ would invoke the "function-example". Additionally
 important to note is that the key sequence ~control+x~ is now
 registered as a special type keybinding, a prefix. A prefix key can,
 but should not be mapped. If a subsequent mapping was to bind
-~control+x~, it would be unclear to Next what keybinding invocation
+~control+x~, it would be unclear to nEXT what keybinding invocation
 the user is trying to type.
 
 The following keys exist as special keys:
