@@ -16,12 +16,28 @@
 
 ;; A struct used to describe a key-chord
 (defstruct key
-  character
+  character-code
   control-modifier
   meta-modifier
   super-modifier)
 
-(defun push-key-chord (control-modifier meta-modifier super-modifier key)
+(defvar *character-conversion-table* (make-hash-table :test 'equalp))
+(setf (gethash "RETURN" *character-conversion-table*) (char-code #\Return))
+(setf (gethash "HYPHEN" *character-conversion-table*) (char-code #\-))
+(setf (gethash "ESCAPE" *character-conversion-table*) (char-code #\Esc))
+
+(defun get-char-code (char-string)
+  ;; Take a string that represents a character and convert it into
+  ;; key code representing it.
+  ;; If the char-string does not represent a single character; returns nil
+  (let ((character-code (gethash char-string *character-conversion-table* nil))
+	(single-char? (= (length char-string) 1)))
+    (cond
+      (character-code character-code)
+      (single-char? (char-code (char char-string 0)))
+      (t ()))))
+
+(defun push-key-chord (control-modifier meta-modifier super-modifier key-code)
   ;; Adds a new chord to key-sequence
   ;; For example, it may add C-M-s or C-x
   ;; to a stack which will be consumed by
@@ -33,7 +49,7 @@
       (setf (key-meta-modifier key-chord) t))
     (when super-modifier
       (setf (key-super-modifier key-chord) t))
-    (setf (key-character key-chord) key)
+    (setf (key-character-code key-chord) key-code)
     (push key-chord *key-sequence-stack*))
   (consume-key-sequence))
 
@@ -89,6 +105,6 @@
   		    ((equal "C" key-character-string) (setf (key-control-modifier key-chord) t))
 		    ((equal "M" key-character-string) (setf (key-meta-modifier key-chord) t))
 		    ((equal "S" key-character-string) (setf (key-super-modifier key-chord) t))
-  		    (t (setf (key-character key-chord) key-character-string))))
+  		    (t (setf (key-character-code key-chord) (get-char-code key-character-string)))))
   	    (push key-chord key-sequence)))
     key-sequence))

@@ -1,11 +1,10 @@
-;;;; gtk.lisp --- gtk interface
+;;; gtk.lisp --- gtk interface
 (in-package :interface)
 
 (defparameter *web-view-context* nil)
 (defparameter *cookie-type* :webkit-cookie-persistent-storage-text)
 (defparameter *cookie-accept-policy* :webkit-cookie-policy-accept-always)
 (defparameter *next-interface* nil)
-(defparameter *character-conversion-table* (make-hash-table :test 'equalp))
 
 (defclass next-interface ()
   ((window :accessor window :initarg :window)
@@ -71,9 +70,7 @@
 	       (funcall ,thunk)))
 	   (lparallel:force ,promise))))))
 
-(defun initialize ()
-  (setf (gethash #\Return *character-conversion-table*) "RETURN")
-  (setf (gethash #\- *character-conversion-table*) "HYPHEN"))
+(defun initialize ())
 
 (defun start ()
   (synchronous-within-main
@@ -156,13 +153,13 @@
 (defun process-event (event)
   (let* ((modifier-state (gdk:gdk-event-key-state event))
          (character (gdk:gdk-keyval-to-unicode (gdk:gdk-event-key-keyval event)))
-         (mapped-character (gethash character *character-conversion-table* character)))
+         (character-code (char-code character)))
     (unless (equalp character #\Null)
       (next:push-key-chord
        (member :control-mask modifier-state :test #'equalp)
        (member :mod1-mask modifier-state :test #'equalp)
        (member :super-mask modifier-state :test #'equalp)
-       (string mapped-character)))))
+       character-code))))
 
 (defun set-visible-view (view)
   (synchronous-within-main
@@ -200,6 +197,7 @@
     (gobject:g-signal-connect
      view "load-changed"
      (lambda (webview load-event)
+       (declare (ignore webview load-event))
        (funcall function)))))
 
 (defun web-view-get-url (view)
@@ -208,6 +206,7 @@
 (cffi:defcallback js-execution-complete :void ((source-object :pointer)
                                                (result :pointer)
                                                (user-data :pointer))
+  (declare (ignore source-object user-data))
   (let* ((np (cffi:null-pointer))
          (js-result (webkit:webkit-web-view-run-javascript-finish
                      (current-view *next-interface*) result))
