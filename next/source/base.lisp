@@ -69,14 +69,9 @@
   (define-key *document-mode-map* (kbd "S-b s")
     'bookmark-current-page)
   (define-key *document-mode-map* (kbd "S-b g")
-<<<<<<< variant A
-    (:input *minibuffer* bookmark-anchor :setup #'setup-anchor :cleanup #'remove-link-hints))
-  (define-key *global-map* (kbd "S-b u") #'bookmark-url)
->>>>>>> variant B
     (:input *minibuffer* bookmark-anchor :setup 'setup-anchor :cleanup 'remove-link-hints))
   (define-key *global-map* (kbd "S-b u")
     (:input *minibuffer* bookmark-url))
-======= end
   (define-key *document-mode-map* (kbd "C-[")
     'switch-buffer-previous)
   (define-key *document-mode-map* (kbd "C-]")
