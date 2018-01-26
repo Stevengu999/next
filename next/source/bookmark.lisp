@@ -14,13 +14,15 @@
        db "insert into bookmarks (url) values (?)" "about:blank")
       (sqlite:disconnect db))))
 
-(defun bookmark-current-page ()
-  (let ((db (sqlite:connect
-	     (truename (probe-file *bookmark-db-path*))))
-	(url (name *active-buffer*)))
-    (sqlite:execute-non-query
-     db "insert into bookmarks (url) values (?)" url)
-    (sqlite:disconnect db)))
+(defcommand bookmark-current-page ()
+  "Bookmark the current page."
+  (with-result (buffer *active-buffer*)
+    (let ((db (sqlite:connect
+               (truename (probe-file *bookmark-db-path*))))
+          (url (name *active-buffer*)))
+      (sqlite:execute-non-query
+       db "insert into bookmarks (url) values (?)" url)
+      (sqlite:disconnect db))))
 
 (defun bookmark-url ()
   (with-result (url (input (mode *minibuffer*)))
